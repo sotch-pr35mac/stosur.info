@@ -71,4 +71,9 @@ jQuery( document ).ready( function( $ ){
 
 	// Full background image
 	$( '.fx-backstretch' ).find( '.info' ).backstretch( 'assets/img/backstretch.jpg' ); // Replace backstrech.jpg with your own image if needed
+
+	//Make Github banner clickable
+	$("#gbanner").click(function() {
+		window.location.href= "http://www.github.com/sotch-pr35mac";
+	});
 });
