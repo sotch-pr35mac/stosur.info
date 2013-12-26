@@ -76,4 +76,10 @@ jQuery( document ).ready( function( $ ){
 	$("#gbanner").click(function() {
 		window.location.href= "http://www.github.com/sotch-pr35mac";
 	});
+
+	//Just in case alert for non-existance resume at this point
+		//eventually remove
+	$("#resume").click(function() {
+		alert("uh-oh! Can't find resume file!");
+	});
 });
