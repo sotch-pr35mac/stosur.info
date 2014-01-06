@@ -1,3 +1,36 @@
+/* 0.1 From the Galaxy */
+
+.item {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	opacity: 0.999;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=99);
+}
+
+.item a {
+	display: block;
+}
+
+.item img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-top:0px;
+
+	transition: all 300ms;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	-o-transition: all 300ms;
+}
+
+.item:hover img {
+	width:100%;
+	height: auto;
+	display: block;
+	margin-top: -10px;
+}
+
 /* 1. General */
 
 html, body { height: 100%; }
