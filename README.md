@@ -1,4 +1,4 @@
 stosur.info
 ===========
 
-My person site @ http://www.stosur.info/
+My personal site @ http://www.stosur.info/
