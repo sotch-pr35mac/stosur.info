@@ -6,11 +6,14 @@ $(document).ready(function() {
 
 	//Listen for click of submit button
 	$("#btn-submit").click(function() {
-    alert("button press");
 		$.post("php/contact.php",
 			{ subject: subject, message: message, name: name, email: email },
 			function(data) {
 				alert("Your message has been sent");
+				$("#name").val("");
+				$("#email").val("");
+				$("#subject").val("");
+				$("#message").val("");
 			});
 	});
 });
