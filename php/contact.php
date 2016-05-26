@@ -10,3 +10,4 @@
 	else {
 		echo "Message failed to send.";
 	}
+?>
