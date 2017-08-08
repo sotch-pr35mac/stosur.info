@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2017, Codrops
  * http://www.codrops.com
  */
@@ -33,7 +33,7 @@
 		anime({
 			targets: DOM.intro,
 			translateY: {
-				value: '-200vh', 
+				value: '-200vh',
 				delay: 100,
 				duration: 2000,
 				easing: 'easeInOutQuad'
@@ -42,7 +42,7 @@
 
 		anime({
 			targets: DOM.path,
-			duration: 1200, 
+			duration: 1200,
 			easing: 'linear',
 			d: DOM.path.getAttribute('pathdata:id')
 		});

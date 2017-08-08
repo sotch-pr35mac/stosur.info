@@ -5,7 +5,7 @@
 }
 
 body {
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Lato', sans-serif;
 	min-height: 100vh;
 	color: #57585c;
 	color: var(--color-text);
@@ -74,7 +74,7 @@ body {
 	--color-title: #ffffff;
 	--color-subtitle: #ec2525;
 	--color-content: #1c1b1b;
-	--font-alt: 400 5vw/1 'Poppins', serif;
+	--font-alt: 300 5vw/1 'Open Sans', sans-serif;
 }
 
 /* Page Loader */
@@ -276,11 +276,11 @@ main {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: var(--color-content-fixed);
+	/* background-color: var(--color-content-fixed); */
 	/* background-image: var(--bg-img); */
 	/* can't use this as relative path until it's fixed in Chrome https://bugs.chromium.org/p/chromium/issues/detail?id=618165 */
-	background-position: 50% 50%;
-	background-size: cover;
+	/* background-position: 50% 50%; */
+	/* background-size: cover; */
 }
 
 .demo-1 .content--fixed {
@@ -296,7 +296,7 @@ main {
 }
 
 .demo-4 .content--fixed {
-	background-image: url(../img/bg4.jpg);
+	/* background-image: url(../img/bg4.jpg); */
 }
 
 .content__inner {
@@ -356,7 +356,7 @@ main {
 	margin: 0;
 }
 
-.enter, .explore {    
+.enter, .explore {
 	margin: 6vh 0 0 0;
 	font-size: 1em;
 	letter-spacing: 3px;
@@ -368,7 +368,7 @@ main {
 }
 
 .enter:hover,
-.enter:focus {    
+.enter:focus {
 	color: var(--color-enter);
 }
 
@@ -383,7 +383,7 @@ main {
 }
 
 .explore:hover,
-.explore:focus {    
+.explore:focus {
 	background: var(--color-text);
 }
 
@@ -430,7 +430,7 @@ main {
 	color: var(--color-menu-item);
 }
 
-.content__text a:hover, 
+.content__text a:hover,
 .content__text a:focus {
 	color: var(--color-menu-item-hover);
 }
