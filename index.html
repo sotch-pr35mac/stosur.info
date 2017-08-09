@@ -9,65 +9,177 @@
     <meta name="author" content="Preston Wang-Stosur-Bassett" />
     <!-- TODO: Add the favicon here -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300" rel="stylesheet">
-    <script src="https://unpkg.com/vue"></script>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/linkstyles.css" />
+    <link rel="stylesheet" href="css/door.css" />
   </head>
 
   <body>
-    <div id="app">
-      <div class="container">
-  			<!-- the header that will be animated by adding the respective state class to it -->
-  			<header id="ha-header" class="ha-header ha-header-large">
-  				<div class="ha-header-perspective">
-  					<div class="ha-header-front">
-  						<h2><span>Preston<br>Wang-Stosur-Bassett</span></h2>
-  						<nav class="cl-effect-1">
-  							<a href="#about">About</a>
-  							<a href="#resume">Resume</a>
-  							<a href="#portfolio">Portfolio</a>
-  							<a href="#contact">Contact</a>
-  						</nav>
-  					</div>
-  				</div>
-  			</header>
-  			<!-- the sections with triggers -->
-  			<section id="about">
-  				<about-section></about-section>
-  			</section>
-  			<section id="resume" class="ha-waypoint" data-animate-down="ha-header-shrink" data-animate-up="ha-header-large">
-          <resume-section></resume-section>
-  			</section>
-  			<section id="portfolio">
-          <portfolio-section></portfolio-section>
-  			</section>
-  			<section id="contact" class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-shrink">
-          <contact-section></contact-section>
-  			</section>
-  		</div><!-- /container -->
-    </div>
-
-    <!-- Scripts -->
-    <script src="js/app.js"></script>
+    <main>
+      <div class="content content--intro">
+        <div class="content__inner">
+          <a class="link link--asiri" href="#" id="title-text">
+            <!-- Content for text -->
+            <div class="text-fill">
+              <canvas id="canv"></canvas>
+            </div>
+            <!-- SVG to cover text fill -->
+            <svg viewBox="0 0 600 300" class="svg-inverted-mask">
+              <!-- Big shape with hole in form of text -->
+              <rect width="100%" height="100%" mask="url(#m-text)" class="shape--fill" />
+              <!-- Transparent copy of text to keep
+                 patterned text selectable -->
+              <use xlink:href="#s-text" class="text--transparent"></use>
+            </svg>
+          </a>
+          <!-- <h2 class="content__title">Preston<br>Wang-Stosur-Bassett</h2> -->
+          <br>
+          <h3 class="content__subtitle">I write code.</h3>
+          <br>
+          <br>
+          <nav class="cl-effect-6">
+            <a href="home.html" class="enter">Enter</a>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <!-- SVG for effect "Asiri" -->
+    <!-- Inverted masking technique by Yoksel http://tympanus.net/codrops/2015/02/16/create-animated-text-fills/ -->
+    <svg class="hidden svg--asiri" viewBox="0 0 600 300">
+      <!-- Symbol with text -->
+      <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="50%" dy="0.35em" textLength="600" class="text--asiri">Preston W.</text>
+      </symbol>
+      <!-- Mask with text -->
+      <mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+        <rect width="100%" height="100%" class="mask__shape">
+        </rect>
+        <use xlink:href="#s-text" class="mask__text"></use>
+      </mask>
+    </svg>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="js/waypoints.min.js"></script>
-		<script>
-			var $head = $( '#ha-header' );
-			$( '.ha-waypoint' ).each( function(i) {
-				var $el = $( this ),
-					animClassDown = $el.data( 'animateDown' ),
-					animClassUp = $el.data( 'animateUp' );
+    <script>
+  		window.requestAnimFrame = (function(callback) {
+  			return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+  				function(callback) {
+  					window.setTimeout(callback, 1000 / 60);
+  				};
+  		})();
 
-				$el.waypoint( function( direction ) {
-					if( direction === 'down' && animClassDown ) {
-						$head.attr('class', 'ha-header ' + animClassDown);
-					}
-					else if( direction === 'up' && animClassUp ){
-						$head.attr('class', 'ha-header ' + animClassUp);
-					}
-				}, { offset: '100%' } );
-			} );
-		</script>
+  		var requestId, jolttime;
+
+  		var c = document.getElementById('canv');
+  		var $ = c.getContext('2d');
+
+  		var s = 18; //grid square size
+  		var mv = 12; //moving areas
+  		var sp = 1.5; //move speed
+  		var clm = 23; //columns
+  		var rw = 10; //rows
+  		var x = []; //x array
+  		var y = []; //y array
+  		var X = []; //starting X array
+  		var Y = []; //starting Y array
+
+  		c.width  = c.offsetWidth;
+  		c.height = c.offsetHeight;
+
+  		for (var i = 0; i < clm * rw; i++) {
+  			x[i] = ((i % clm) - 0.5) * s;
+  			y[i] = (Math.floor(i / clm) - 0.5) * s;
+  			X[i] = x[i];
+  			Y[i] = y[i];
+  		}
+  		var t = 0;
+
+  		function jolt() {
+  			$.fillRect(0, 0, c.width, c.height);
+
+  			for (var i = 0; i < clm * rw; i++) {
+  				if (i % clm != clm - 1 && i < clm * (rw - 1) - 1) {
+  					$.fillStyle = "hsla(0,0,0,1)";
+  					$.strokeStyle = "#60d0ff";
+  					$.lineWidth = 1;
+  					$.beginPath();
+  					$.moveTo(x[i], y[i]);
+  					$.lineTo(x[i + 1], y[i + 1]);
+  					$.lineTo(x[i + clm + 1], y[i + clm + 1]);
+  					$.lineTo(x[i + clm], y[i + clm]);
+  					$.closePath();
+  					$.stroke();
+  					$.fill();
+  				}
+  			}
+  			for (var i = 0; i < rw * clm; i++) {
+  				if ((x[i] < X[i] + mv) && (x[i] > X[i] - mv) && (y[i] < Y[i] + mv) && (y[i] > Y[i] - mv)) {
+  					x[i] = x[i] + Math.floor(Math.random() * (sp * 2 + 1)) - sp;
+  					y[i] = y[i] + Math.floor(Math.random() * (sp * 2 + 1)) - sp;
+  				} else if (x[i] >= X[i] + mv) {
+  					x[i] = x[i] - sp;
+  				} else if (x[i] <= X[i] - mv) {
+  					x[i] = x[i] + sp;
+  				} else if (y[i] >= Y[i] + mv) {
+  					y[i] = y[i] - sp;
+  				} else if (y[i] <= Y[i] + mv) {
+  					y[i] = y[i] + sp;
+  				}
+  			}
+  			//controls time of electric shake> when counter equals 0, it will reset for 5s then start again.
+  			if (t % c.width == 0) {
+  				jolttime = setTimeout('jolt()', 5);
+  				t++;
+  			} else {
+  				jolttime = setTimeout('jolt()', 5);
+  				t++;
+  			}
+  		}
+
+  		function start() {
+  			if (!requestId) {
+  				requestId = window.requestAnimFrame(jolt);
+  			}
+  		}
+
+  		function stop() {
+  			if (requestId) {
+  				clearTimeout(jolttime);
+  				window.cancelAnimationFrame(requestId);
+  				requestId = undefined;
+  			}
+  		}
+
+  		document.querySelector('a.link--asiri').addEventListener('mouseenter', start);
+  		document.querySelector('a.link--asiri').addEventListener('mouseleave', stop);
+
+      /*var mouseX = 0;
+      var mouseY = 0;
+      var timeout;
+
+      function mouseMove(e) {
+        clearTimeout(timeout);
+        jQuery("#title-text").toggleClass('link--asiri-hovered');
+        start();
+
+        function updateCoordinates(x, y) {
+          mouseX = x;
+          mouseY = y;
+        }
+        if(e.pageX || e.pageY) {
+          updateCoordinates(e.pageX, e.pageY);
+        }
+        else if(e.clientX || e.clientY) {
+          updateCoordinates(e.clientX, e.clientY);
+        }
+
+        timeout = setTimeout(function() {
+          jQuery("#title-text").toggleClass('link--asiri-hovered');
+          stop();
+        }, 2000);
+      }
+
+      if(!('ontouchstart' in window)) {
+        window.addEventListener('mousemove', mouseMove);
+      }*/
+  	</script>
   </body>
 </html>
