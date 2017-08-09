@@ -6,9 +6,9 @@ My Personal Site
 This is the code for my personal site. Nothing too special here.
 
 ### __Built Using__
-	- [Vue.js](https://vuejs.org/)
-	- [Formspree](https://formspree.io/)
-	- [Skeleton](http://getskeleton.com/)
+- [Vue.js](https://vuejs.org/)
+- [Formspree](https://formspree.io/)
+- [Skeleton](http://getskeleton.com/)
 
 ### __Running__
 1. Install Dependencies `npm install`
