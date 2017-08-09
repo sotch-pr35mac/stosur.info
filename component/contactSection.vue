@@ -18,20 +18,20 @@
           </p>
         </div>
       </div>
-      <form>
+      <form action="https://formspree.io/p.wanstobas@gmail.com" method="post">
         <label for="inputName">Your Name</label>
-        <input class="u-full-width" type="email" placeholder="Lori Ipsum" id="inputName" name="inputName" />
+        <input class="u-full-width" type="text" placeholder="Lori Ipsum" id="inputName" name="inputName" />
         <br>
         <br>
         <div class="row">
           <div class="six columns">
-            <label for="inputEmail">Your email</label>
-            <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="inputEmail" name="inputEmail">
+            <label for="_replyto">Your email</label>
+            <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="inputEmail" name="_replyto">
           </div>
           <div class="six columns">
-            <label for="inputSubject">Reason for contact</label>
-            <select class="u-full-width" id="inputSubject" name="inputSubject">
-              <option selected disabled>Just to say hello</option>
+            <label for="_subject">Reason for contact</label>
+            <select class="u-full-width" id="inputSubject" name="_subject">
+              <option selected disabled value="hello">Just to say hello</option>
               <option value="question">Question or Concern</option>
               <option value="job">Employment Opportunity</option>
             </select>
