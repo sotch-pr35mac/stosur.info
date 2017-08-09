@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="header-with-action">Resume</h1>
-    <a href="Preston_Wang-Stosur-Bassett_Resume.pdf" class="button button-primary">Download My Resume</a>
+    <a href="Preston_Wang-Stosur-Bassett_Resume.pdf" class="button button-primary" target="_blank">Download My Resume</a>
     <div class="row">
       <div class="six columns">
         <h3>Education</h3>
@@ -30,7 +30,7 @@
         </div>
         <div class="info-group">
           <h5>Software Engineer - <i>Floydware LLC</i></h5>
-          <p><b>2010 - 2013<b> | Internationalized software for use in other languages and developed Android mobile app for cloud scheduling software company. Valuable experience working in office setting; acquired coding "good-practices" by developing within a team.
+          <p><b>2010 - 2013</b> | Internationalized software for use in other languages and developed Android mobile app for cloud scheduling software company. Valuable experience working in office setting; acquired coding "good-practices" by developing within a team.
         </div>
       </div>
     </div>
