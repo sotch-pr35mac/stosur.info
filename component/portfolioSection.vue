@@ -51,7 +51,7 @@
         </figcaption>
       </figure>
     </div>
-    <br>
+
   </div>
 </template>
 

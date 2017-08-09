@@ -229,6 +229,9 @@ input[type="button"].button-primary:focus {
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+form {
+  font-size: .6em;
+}
 input[type="email"],
 input[type="number"],
 input[type="search"],

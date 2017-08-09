@@ -8,6 +8,21 @@ body {
 	font-family: 'Lato', Arial, sans-serif;
 }
 
+#end-page {
+	bottom: 50px;
+}
+
+footer {
+	margin-top: 15px;
+}
+
+.footer-text {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #4a4c4c;
+	opacity: 0.8;
+}
+
 /* Content style */
 section {
 	width: 90%;
