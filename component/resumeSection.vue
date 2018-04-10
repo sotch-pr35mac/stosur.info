@@ -7,7 +7,7 @@
         <h3>Education</h3>
         <div class="info-group">
           <h5>B.S. Computer Science - <i>Kalamazoo College</i></h5>
-          <p><b>2014 - 2018</b> | Senior studying computer science and Chinese with a 3.6 GPA. Studied abroad one year in China at Capital Normal University in Beijing and Harbin Institute of Technology in Harbin.</p>
+          <p><b>2014 - 2018</b> | Studied computer science and Chinese with a 3.6 GPA. Studied abroad one year in China at Capital Normal University in Beijing and Harbin Institute of Technology in Harbin.</p>
         </div>
         <div class="info-group">
           <h5>Highschool - <i>Glenbard West Highschool</i></h5>
@@ -16,6 +16,10 @@
       </div>
       <div class="six columns">
         <h3>Experience</h3>
+        <div class="info-group">
+          <h5>Software Engineer - <i>Clinc Inc</i></h5>
+          <p><b>2018 - Present</b> | Developing interfaces for conversational AI platform.</p>
+        </div>
         <div class="info-group">
           <h5>Freelance Web Developer</h5>
           <p><b>2014 - Present</b> | Developed engaging online experiences for a variety of independent businesses using modern web technologies.</p>

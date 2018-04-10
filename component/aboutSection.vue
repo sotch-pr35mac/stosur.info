@@ -13,9 +13,11 @@
           Passionate and dedicated to my work, I have an eye for design and talent for computer programming.
           A self-proclaimed Linux enthusiast who enjoys traveling to far away lands and listening to an expansive variety of music.
         </p>
+        <!--
         <p>
           I am seeking an internship or job position to further my passion and knowledge of computer programming and computer science.
         </p>
+        -->
         <p>
           You can find me on these social networking sites:&nbsp;
           <br>
