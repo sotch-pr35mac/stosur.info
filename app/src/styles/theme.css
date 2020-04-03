@@ -23,6 +23,7 @@
 
 	/* Borders */
 	--border-radius: 10px;
+	--border-radius--small: 2px;
 
 	/* Transitions & Animations */
 	--transition-duration: 0.5s;
@@ -49,4 +50,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font--title);
 	font-weight: var(--font-weight--title);
 	color: var(--color--black);
+}
+
+p {
+	letter-spacing: 0.01em;
 }
