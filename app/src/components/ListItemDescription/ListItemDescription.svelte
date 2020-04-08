@@ -7,6 +7,7 @@ const getItemList = () => items.map(i => i.name);
 const changeActiveIndex = index => {
 	activeIndex = index;
 }
+const splitDescription = paragraph => paragraph.split('. ');
 </script>
 
 <style>
@@ -56,6 +57,7 @@ const changeActiveIndex = index => {
 }
 .list-item-description--detail--description {
 	margin: var(--space);
+	margin-top: var(--space--extra-large);
 }
 .list-item-description--detail--link {
 	text-decoration: none;
@@ -63,6 +65,9 @@ const changeActiveIndex = index => {
 }
 .list-item-description--detail--link:hover {
 	border-bottom: 1.5px solid var(--color--primary-end);
+}
+.list-item-description--detail--description-item {
+	margin: var(--space);
 }
 </style>
 
@@ -83,7 +88,14 @@ const changeActiveIndex = index => {
 			{/if}
 		</h1>
 		<h3 class="list-item-description--detail--subtitle">{ items[activeIndex].startDate }&nbsp;-&nbsp;{ items[activeIndex].endDate }</h3>
+		<!--
 		<p class="list-item-description--detail--description">{ items[activeIndex].description }</p>
+		-->
+		<ul class="list-item-description--detail--description">
+			{#each splitDescription(items[activeIndex].description) as sentence}
+				<li class="list-item-description--detail--description-item">{sentence}</li>
+			{/each}
+		</ul>
 	</div>
 </div>
 </div>
