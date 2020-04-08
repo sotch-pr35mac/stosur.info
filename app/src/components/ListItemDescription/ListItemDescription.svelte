@@ -20,6 +20,7 @@ const splitDescription = paragraph => paragraph.split('. ');
 	display: flex;
 	align-items: flex-start;
 	max-width: 1000px;
+	min-width: 1000px;
 }
 .list-item-description--list {
 	list-style-type: none;
