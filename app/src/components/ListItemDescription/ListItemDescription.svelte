@@ -1,4 +1,6 @@
 <script>
+import SidebarLink from '../Sidebar/SidebarLink.svelte';
+
 export let items;
 export let showLink = false;
 
@@ -26,25 +28,17 @@ const splitDescription = paragraph => paragraph.split('. ');
 	list-style-type: none;
 	padding: var(--space) 0;
 	margin-top: 0 var(--space--extra-large) 0 0;
-	border-right: 1.5px solid var(--text-color--light);
 	min-width: max-content;
+	max-width: max-content;
 }
 .list-item-description--list-item {
-	padding: var(--space--small);
-	margin: var(--space--extra-large);
-	text-align: right;
+	margin: var(--space--large);
 }
 .list-item-description--list-item--active {
 	border-bottom: 1.5px solid var(--text-color--light);
 }
 .list-item-description--list-item--content {
 	text-transform: uppercase;
-}
-.list-item-description--list-item--content:hover {
-	border-bottom: 1.5px solid var(--text-color--light);
-	transition-property: border-color;
-	transition-duration: var(--transition-duration);
-	cursor: pointer;
 }
 .list-item-description--detail {
 	margin-left: var(--space--extra-large);
@@ -76,9 +70,11 @@ const splitDescription = paragraph => paragraph.split('. ');
 <div class="list-item-description">
 	<ul class="list-item-description--list">
 		{#each getItemList() as itemName, i}
-			<li class="list-item-description--list-item" on:click={() => changeActiveIndex(i)}>
-				<span class="list-item-description--list-item--content" class:list-item-description--list-item--active="{i == activeIndex}">{itemName}</span>
-			</li>	
+			<li class="list-item-description--list-item" on:click="{() => changeActiveIndex(i)}">
+			<SidebarLink color="grey" width="full-width">
+				<span class:list-item-description--list-item--active="{i == activeIndex}">{itemName}</span>
+			</SidebarLink>
+			</li>
 		{/each}
 	</ul>
 	<div class="list-item-description--detail">
@@ -89,9 +85,6 @@ const splitDescription = paragraph => paragraph.split('. ');
 			{/if}
 		</h1>
 		<h3 class="list-item-description--detail--subtitle">{ items[activeIndex].startDate }&nbsp;-&nbsp;{ items[activeIndex].endDate }</h3>
-		<!--
-		<p class="list-item-description--detail--description">{ items[activeIndex].description }</p>
-		-->
 		<ul class="list-item-description--detail--description">
 			{#each splitDescription(items[activeIndex].description) as sentence}
 				<li class="list-item-description--detail--description-item">{sentence}</li>

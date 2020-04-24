@@ -79,7 +79,7 @@ const iconLinks = [
 	</div>	
 	<div class="sidebar--links">
 		{#each navigationLinks as navItem}
-			<SidebarLink>
+			<SidebarLink color="white" width="full-width">
 				{ navItem }
 			</SidebarLink>
 		{/each} 

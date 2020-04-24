@@ -1,3 +1,14 @@
+<script>
+export let color = 'white';
+export let width = 'full-width';
+
+const getClasses = () => {
+	return ['sidebar-link',
+		`sidebar-link--${color}`,
+		`sidebar-link--${width}`].join(' ');
+}
+</script>
+
 <style>
 .sidebar-link {
 	margin: var(--space);
@@ -6,11 +17,21 @@
 	cursor: pointer;
 	color: var(--text-color--light);
 	font-family: var(--font--text);
-	width: 100%;
-	background-color: var(--color--white);
 	text-align: left;
 	font-size: 1em;
 	border-radius: var(--border-radius);
+}
+.sidebar-link--white {
+	background-color: var(--color--white);
+}
+.sidebar-link--grey {
+	background-color: var(--color--grey);
+}
+.sidebar-link--full-width {
+	width: 100%;
+}
+.sidebar-link--fit-content {
+	width: fit-content;
 }
 .sidebar-link:hover {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
@@ -20,6 +41,6 @@
 }
 </style>
 
-<button class="sidebar-link">
+<button class="{getClasses()}">
 	<slot></slot>
 </button>
