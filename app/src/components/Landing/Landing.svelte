@@ -1,5 +1,9 @@
 <script>
 import { ChevronDownIcon } from 'svelte-feather-icons';
+
+const navigate = slug => {
+    document.location.href = `${document.location.href.split('#')[0]}#${slug}`;
+}
 </script>
 
 <style>
@@ -44,6 +48,9 @@ import { ChevronDownIcon } from 'svelte-feather-icons';
 	justify-content: center;
 	color: var(--color--white);
 }
+.landing--chevron:hover {
+    transform: scale(3) translate(0px, 10%);
+}
 </style>
 
 <section class="landing-content">
@@ -51,7 +58,7 @@ import { ChevronDownIcon } from 'svelte-feather-icons';
 		<div class="landing--profile-frame">
 			<div class="landing--profile-photo"></div>
 		</div>
-		<div class="landing--chevron">
+		<div class="landing--chevron" on:click={() => navigate('about')}>
 			<ChevronDownIcon size="24" />	
 		</div>
 	</div>

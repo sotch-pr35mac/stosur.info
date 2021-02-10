@@ -47,9 +47,9 @@ const experiences = [
 ];
 </script>
 
-<SectionContent color="light">
+<SectionContent color="dark">
 	<SectionTitle>
-		<h1>Experience</h1>
+		<h1 id="experience">Experience</h1>
 	</SectionTitle>
 	<ListItemDescription items={experiences} showLink={true} />
 </SectionContent>

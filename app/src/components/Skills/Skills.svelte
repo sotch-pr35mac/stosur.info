@@ -3,8 +3,8 @@ import SectionContent from '../SectionContent/SectionContent.svelte';
 import SectionTitle from '../SectionTitle/SectionTitle.svelte';
 </script>
 
-<SectionContent color="light">
+<SectionContent color="dark">
 	<SectionTitle>
-		<h1>Skills</h1>
+		<h1 id="skills">Skills</h1>
 	</SectionTitle>
 </SectionContent>

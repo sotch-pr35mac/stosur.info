@@ -5,6 +5,6 @@ import SectionTitle from '../SectionTitle/SectionTitle.svelte';
 
 <SectionContent color="light">
 	<SectionTitle>
-		<h1>Contact</h1>
+		<h1 id="contact">Contact</h1>
 	</SectionTitle>
 </SectionContent>

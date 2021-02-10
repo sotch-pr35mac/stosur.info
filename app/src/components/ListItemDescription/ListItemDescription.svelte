@@ -35,7 +35,8 @@ const splitDescription = paragraph => paragraph.split('. ');
 	margin: var(--space--large);
 }
 .list-item-description--list-item--active {
-	border-bottom: 1.5px solid var(--text-color--light);
+    font-weight: bold;
+    color: var(--color--primary-end);
 }
 .list-item-description--list-item--content {
 	text-transform: uppercase;

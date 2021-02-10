@@ -14,6 +14,7 @@ import { DownloadIcon, SendIcon } from 'svelte-feather-icons';
 	flex: 1;
 	display: flex;
 	border-radius: var(--border-radius);
+    height: 35vh;
 }
 .about-section--text {
 	flex: 3;
@@ -28,7 +29,7 @@ import { DownloadIcon, SendIcon } from 'svelte-feather-icons';
 
 <SectionContent color="dark">
 	<SectionTitle>
-		<h1>About</h1>
+		<h1 id="about">About</h1>
 	</SectionTitle>
 	<div class="about-section--content">
 		<img src="img/author.jpg" class="about-section--image" />

@@ -25,7 +25,7 @@ const education = [
 ];
 </script>
 
-<SectionContent color="dark">
+<SectionContent color="light">
 	<SectionTitle>
 		<h1>Education</h1>
 	</SectionTitle>

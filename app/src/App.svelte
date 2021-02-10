@@ -25,6 +25,7 @@ import Contact from './components/Contact/Contact.svelte';
 	flex: 3.5;
 	flex-direction: column;
 	overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 .content {
 	display: block;
@@ -43,10 +44,10 @@ import Contact from './components/Contact/Contact.svelte';
 			<Landing />
 			<BrandingBar />
 			<Profile />
+			<Projects />
 			<Experience />
 			<Education />
 			<Skills />
-			<Projects />
 			<Contact />
 		</div>
 	</div>

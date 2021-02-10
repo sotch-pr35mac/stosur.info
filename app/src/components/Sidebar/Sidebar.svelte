@@ -9,12 +9,11 @@ import SidebarLink from './SidebarLink.svelte';
 import SidebarIcon from './SidebarIcon.svelte';
 
 const navigationLinks = [
-	'Home',
 	'About',
+	'Projects',
 	'Experience',
 	'Education',
 	'Skills',
-	'Projects',
 	'Contact'
 ];
 const iconLinks = [
@@ -55,6 +54,8 @@ const iconLinks = [
 .sidebar--brand-subtitle {
 	margin: 0px;
 	font-size: 1em;
+    line-height: 1.5;
+    opacity: 0.7;
 }
 .sidebar--icons--container {
 	position: absolute;
@@ -74,12 +75,13 @@ const iconLinks = [
 			Wang-Stosur-Bassett
 		</h2>
 		<p class="sidebar--brand-subtitle">
-			Software Engineer
+			Software Engineer<br/>
+            & Experience Architect
 		</p>
 	</div>	
 	<div class="sidebar--links">
 		{#each navigationLinks as navItem}
-			<SidebarLink color="white" width="full-width">
+			<SidebarLink color="white" width="full-width" link={navItem.toLowerCase()}>
 				{ navItem }
 			</SidebarLink>
 		{/each} 

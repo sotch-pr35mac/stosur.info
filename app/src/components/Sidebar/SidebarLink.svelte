@@ -1,11 +1,16 @@
 <script>
 export let color = 'white';
 export let width = 'full-width';
+export let link = '';
 
 const getClasses = () => {
 	return ['sidebar-link',
 		`sidebar-link--${color}`,
 		`sidebar-link--${width}`].join(' ');
+}
+
+const navigate = slug => {
+    document.location.href = `${document.location.href.split('#')[0]}#${slug}`;
 }
 </script>
 
@@ -41,6 +46,6 @@ const getClasses = () => {
 }
 </style>
 
-<button class="{getClasses()}">
+<button class="{getClasses()}" on:click={() => navigate(link)}>
 	<slot></slot>
 </button>
