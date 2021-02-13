@@ -1,7 +1,7 @@
 <script>
 export let color = 'white';
 export let width = 'full-width';
-export let link = '';
+export let link;
 
 const getClasses = () => {
 	return ['sidebar-link',
