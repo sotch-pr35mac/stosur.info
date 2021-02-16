@@ -28,6 +28,9 @@
 	/* Transitions & Animations */
 	--transition-duration: 0.5s;
 
+    /* Shadows */
+    --shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+
 	/* Proximity */
 	--space--gutter--large: 60px;
 	--space--gutter--small: 30px;

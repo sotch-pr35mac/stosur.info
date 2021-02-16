@@ -39,7 +39,7 @@ const navigate = slug => {
 	width: fit-content;
 }
 .sidebar-link:hover {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+	box-shadow: var(--shadow);
 	color: var(--color--black);
 	transition-property: box-shadow, color;
 	transition-duration: 0.25s;

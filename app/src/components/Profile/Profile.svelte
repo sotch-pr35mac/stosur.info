@@ -3,6 +3,14 @@ import SectionContent from '../SectionContent/SectionContent.svelte';
 import SectionTitle from '../SectionTitle/SectionTitle.svelte';
 import Clickable from '../Clickable/Clickable.svelte';
 import { DownloadIcon, SendIcon } from 'svelte-feather-icons';
+
+const resumeLink = '../Preston_Wang-Stosur-Bassett.pdf';
+const emailLink = 'mailto:p.wanstobas@gmail.com';
+
+const constructLocalUrl = partialPath => `${document.location.protocol}//${document.location.host}/${partialPath}`;
+const navigate = (url, localLink) => {
+    document.location.href = localLink ? constructLocalUrl(url) : url;
+};
 </script>
 
 <style>
@@ -42,12 +50,12 @@ import { DownloadIcon, SendIcon } from 'svelte-feather-icons';
 				I am seeking a company to grow with. I am looking to further my passion and knowledge of software engineering. Devoted to making the world a better place.
 			</p>
 			<div class="about-button-group">
-				<Clickable>
+				<Clickable on:click={() => navigate(resumeLink, true)}>
 					<DownloadIcon size="16" />
 					&nbsp;
 					Download Resume
 				</Clickable>
-				<Clickable>
+				<Clickable on:click={() => navigate(emailLink, false)}>
 					<SendIcon size="16" />
 					&nbsp;
 					Hire Me!

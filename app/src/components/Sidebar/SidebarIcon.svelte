@@ -1,5 +1,9 @@
 <script>
 export let link; 
+
+const navigate = url => {
+    document.location.href = url;
+}
 </script>
 
 <style>
@@ -17,13 +21,13 @@ export let link;
 	justify-content: center;
 }
 .sidebar-icon:hover {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+	box-shadow: var(--shadow);
 	color: var(--color--black);
 	transition-property: box-shadow, color;
 	transition-duration: 0.25s;
 }
 </style>
 
-<button class="sidebar-icon">
+<button class="sidebar-icon" on:click={() => navigate(link)}>
 	<slot></slot>
 </button>

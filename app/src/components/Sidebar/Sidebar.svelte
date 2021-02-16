@@ -19,15 +19,17 @@ const navigationLinks = [
 const iconLinks = [
 	{
 		icon: GithubIcon,
-		link: ''
+		link: 'https://github.com/sotch-pr35mac'
 	},
+    /*
 	{
 		icon: LinkedinIcon,
 		link: ''
 	},
+    */
 	{
 		icon: MailIcon,
-		link: ''
+		link: 'mailto:p.wanstobas@gmail.com'
 	}
 ]; 
 </script>

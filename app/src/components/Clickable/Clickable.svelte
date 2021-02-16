@@ -1,3 +1,9 @@
+<script>
+import { createEventDispatcher } from 'svelte';
+
+const dispatch = createEventDispatcher();
+</script>
+
 <style>
 .clickable-button {
 	border: none;
@@ -14,11 +20,11 @@
 .clickable-button:hover {
 	transition-property: box-shadow, background-color;
 	transition-duration: var(--transition-duration);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+	box-shadow: var(--shadow);
 	background-color: var(--color--white);
 }
 </style>
 
-<button class="clickable-button">
+<button class="clickable-button" on:click={() => dispatch('click')}>
 	<slot></slot>
 </button>
