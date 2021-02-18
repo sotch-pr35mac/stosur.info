@@ -32,7 +32,7 @@ const send = () => {
 }
 </style>
 
-<SectionContent color="light">
+<SectionContent color="dark">
 	<SectionTitle>
 		<h1 id="contact">Contact</h1>
 	</SectionTitle>

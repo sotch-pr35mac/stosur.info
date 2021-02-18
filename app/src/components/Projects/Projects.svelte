@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard.svelte';
 const projects = [
     {
         name: 'Syng',
-        description: 'Designed, developed, and maintain open-source, cross-platform Chinese-to-English dictionary app and study toolkit',
+        description: 'Designed, developed, and maintain open-source, cross-platform Chinese-to-English dictionary app and study toolkit.',
         role: 'Personal Project',
         start: '2016',
         end: 'Present',

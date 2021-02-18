@@ -47,7 +47,9 @@ import Contact from './components/Contact/Contact.svelte';
 			<Projects />
 			<Experience />
 			<Education />
+            <!--
 			<Skills />
+            -->
 			<Contact />
 		</div>
 	</div>

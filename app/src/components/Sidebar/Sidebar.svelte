@@ -13,7 +13,7 @@ const navigationLinks = [
 	'Projects',
 	'Experience',
 	'Education',
-	'Skills',
+	// 'Skills',
 	'Contact'
 ];
 const iconLinks = [

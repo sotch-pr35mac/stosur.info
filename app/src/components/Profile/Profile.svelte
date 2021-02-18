@@ -17,6 +17,7 @@ const navigate = (url, localLink) => {
 .about-section--content {
 	display: flex;
 	flex-direction: row;
+    align-items: center;
 }
 .about-section--image {
 	flex: 1;
@@ -43,12 +44,15 @@ const navigate = (url, localLink) => {
 		<img src="img/author.jpg" class="about-section--image" />
 		<div class="about-section--text">
 			<h3>Hi, I'm Preston.</h3>
-			<p>
-				I am a self-motivated full-stack senior software engineer with excellent communication skills who is passionate and dedicated to his work. I ahve an eye for design and a talent for software engineering. I am experienced in building products, delivering for clients, and managing a team.
-			</p>
-			<p>
-				I am seeking a company to grow with. I am looking to further my passion and knowledge of software engineering. Devoted to making the world a better place.
-			</p>
+            <p>
+                I am a senior software engineer and conversational experience architect who is passionate and dedicated to his work. I excel at building beautiful software and robust conversations in fast-paced environments. I am experienced in building products, delivering for clients, and managing a team.
+            </p>
+            <p>
+                I work at the intersection of people and technology. Passionate about bringing sustainability and morale to work, I am self-motivated and can effectively explain complex situations in easy to understand terms.
+            </p>
+            <p>
+                Seeking a company to grow with where I can meaningfully contribute to company culture, mentor team members, and build robust software experiences.
+            </p>
 			<div class="about-button-group">
 				<Clickable on:click={() => navigate(resumeLink, true)}>
 					<DownloadIcon size="16" />

@@ -11,7 +11,7 @@ const experiences = [
 		endDate: 'Present',
 		title: 'Senior Software Engineer',
 		name: 'Clinc',
-		description: 'Developed features and resolved issues on the Product Engineering team building a conversational AI web platform. Architected conversational AI for clients. Frew a team from zero to six and mentored junior engineers as teh lead of the AI Experience Development team.',
+        description: 'Developed features and resolved issues on the Product Engineering team building a conversational AI web platform. Architected conversational AI for clients. Grew a team from zero to six and mentored junior engineers as the engineering manager of AI Experience Development.',
 		link: 'https://clinc.com/'
 	},
 	{
@@ -21,7 +21,7 @@ const experiences = [
 		endDate: '2016',
 		title: 'Front-End Developer',
 		name: 'MCON Beijing',
-		description: 'Developed WeChat apps for corporate clients in China using Angular and WeUI. Gained insights into developing for the Chinese market while working on a remote international team.',
+        description: 'Developed WeChat apps for corporate clients in China using Angular and WeUI. Gained insights into developing for Chinese market while working on an international team.',
 		link: 'https://www.mcon-group.com/'
 	},
 	{
@@ -31,7 +31,7 @@ const experiences = [
 		endDate: '2016',
 		title: 'Manager',
 		name: 'CPR Cell Phone Repair',
-		description: 'Managed teh Kalamazoo franchise location of five people, repaired a variety of mobile electronics, and increased sales with a "no-pressure" sales style.',
+        description: 'Managed the Kalamazoo franchise location of five people, repaired a variety of mobile electronics, and increased sales with a "no-pressure" sales style.',
 		link: 'https://www.cellphonerepair.com/'
 	},
 	{
@@ -41,7 +41,7 @@ const experiences = [
 		endDate: '2013',
 		title: 'Junior Software Engineer',
 		name: 'Floydware, LLC',
-		description: 'Internationalized software for use in other languages and developed Android mobile app for cloud scheduling software company',
+        description: 'Internationalized software for use in other languages and developed Android mobile app for cloud scheduling software company.',
 		link: 'https://www.rosysalonsoftware.com/'
 	}
 ];
