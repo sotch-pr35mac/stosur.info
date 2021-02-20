@@ -9,6 +9,32 @@ export let link;
 </script>
 
 <style>
+@media (pointer: course) {
+    .project-card--content {
+        --project-card--opacity: 1;
+    }
+}
+@media (pointer: fine) {
+    .project-card--content {
+        --project-card--opacity: 0;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .project-card--content {
+        --project-card--background-color: rgba(255, 255, 255, 0.9);
+    }
+    .project-card--link {
+        --project-card--link-color: var(--color--primary-end);
+    }
+}
+@media (prefers-color-scheme: light) {
+    .project-card--content {
+        --project-card--background-color: rgba(0, 0, 0, 0.9);
+    }
+    .project-card--link {
+        --project-card--link-color: var(--color--primary-start);
+    }
+}
 .project-card--container {
     display: flex;
     align-items: center;
@@ -19,10 +45,10 @@ export let link;
     border-radius: var(--border-radius);
 }
 .project-card--content {
-    opacity: 0;
+    opacity: var(--project-card--opacity);
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--project-card--background-color);
     border-radius: var(--border-radius);
     transition-duration: var(--transition-duration);
     transition-property: opacity;
@@ -53,7 +79,7 @@ export let link;
     text-decoration: underline;
     transition-duration: var(--transition-duration);
     transition-property: color;
-    color: var(--color--primary-start); 
+    color: var(--project-card--link-color);
 }
 .project-card--link:hover {
     color: var(--color--white);

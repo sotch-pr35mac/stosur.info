@@ -12,6 +12,15 @@ import Contact from './components/Contact/Contact.svelte';
 </script>
 
 <style>
+/* iPad Portrait */
+@media (max-width: 1024px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar-container {
+        flex: unset !important;
+    }
+}
 .app-container {
 	display: flex;
 	height: 100vh;
@@ -37,7 +46,7 @@ import Contact from './components/Contact/Contact.svelte';
 
 <div class="app-container">
 	<div class="sidebar-container">
-		<Sidebar/>
+		<Sidebar />
 	</div>
 	<div class="content-container">
 		<div class="content">

@@ -1,4 +1,11 @@
 <script>
+import {
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    TriangleIcon,
+    CircleIcon
+} from 'svelte-feather-icons';
+
 import SidebarLink from '../Sidebar/SidebarLink.svelte';
 
 export let items;
@@ -7,12 +14,24 @@ export let showLink = false;
 let activeIndex = 0;
 const getItemList = () => items.map(i => i.name);
 const changeActiveIndex = index => {
-	activeIndex = index;
+    activeIndex = (index < 0 || index > (items.length - 1)) ? 0 : index;
 }
 const splitDescription = paragraph => paragraph.split('. ');
 </script>
 
 <style>
+@media (max-width: 414px) {
+    .list-item-description {
+        flex-direction: column;
+        align-items: unset !important;
+    } 
+    .list-item-description--list {
+        display: none;
+    }
+    .list-item-description--switcher {
+        display: flex !important;
+    }
+}
 .list-item-description--container {
 	width: 100%;
 	display: flex;
@@ -22,7 +41,7 @@ const splitDescription = paragraph => paragraph.split('. ');
 	display: flex;
 	align-items: flex-start;
 	max-width: 1000px;
-	min-width: 1000px;
+    min-width: 100%;
 }
 .list-item-description--list {
 	list-style-type: none;
@@ -65,6 +84,16 @@ const splitDescription = paragraph => paragraph.split('. ');
 .list-item-description--detail--description-item {
 	margin: var(--space);
 }
+.list-item-description--switcher {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space--extra-large);
+}
+.list-item-description--switcher--radio {
+    margin: 0px var(--space);
+}
 </style>
 
 <div class="list-item-description--container">
@@ -92,5 +121,24 @@ const splitDescription = paragraph => paragraph.split('. ');
 			{/each}
 		</ul>
 	</div>
+    <div class="list-item-description--switcher">
+        <span class="list-item-description--switcher--arrow" on:click="{() => changeActiveIndex(activeIndex - 1)}">
+            <ChevronLeftIcon size="32" />
+        </span>
+        <span class="list-item-description--switcher--radio-container">
+            {#each getItemList() as itemName, i}
+                <span class="list-item-description--switcher--radio">
+                    {#if i == activeIndex}
+                        <TriangleIcon size="16" />
+                    {:else}
+                        <CircleIcon size="16" />
+                    {/if}
+                </span>
+            {/each}
+        </span>
+        <span class="list-item-description--switcher--arrow" on:click="{() => changeActiveIndex(activeIndex + 1)}">
+            <ChevronRightIcon size="32" />
+        </span>
+    </div>
 </div>
 </div>

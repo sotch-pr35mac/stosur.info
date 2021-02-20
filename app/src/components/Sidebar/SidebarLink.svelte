@@ -1,7 +1,7 @@
 <script>
 export let color = 'white';
 export let width = 'full-width';
-export let link;
+export let link = false;
 
 const getClasses = () => {
 	return ['sidebar-link',
@@ -10,7 +10,8 @@ const getClasses = () => {
 }
 
 const navigate = slug => {
-    document.location.href = `${document.location.href.split('#')[0]}#${slug}`;
+    if (link)
+        document.location.href = `${document.location.href.split('#')[0]}#${slug}`;
 }
 </script>
 

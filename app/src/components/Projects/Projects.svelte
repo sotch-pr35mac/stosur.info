@@ -119,6 +119,12 @@ const projects = [
 </script>
 
 <style>
+/* iPad Portrait */
+@media (max-width: 1024px) {
+    .projects-section--content {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
 .projects-section--content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

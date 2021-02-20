@@ -14,6 +14,12 @@ const navigate = (url, localLink) => {
 </script>
 
 <style>
+/* iPhone Portrait */
+@media (max-width: 414px) {
+    .about-section--content {
+        display: unset !important;
+    }
+}
 .about-section--content {
 	display: flex;
 	flex-direction: row;
@@ -41,7 +47,7 @@ const navigate = (url, localLink) => {
 		<h1 id="about">About</h1>
 	</SectionTitle>
 	<div class="about-section--content">
-		<img src="img/author.jpg" class="about-section--image" />
+		<img src="img/author.jpg" class="about-section--image" alt="Author Image" />
 		<div class="about-section--text">
 			<h3>Hi, I'm Preston.</h3>
             <p>

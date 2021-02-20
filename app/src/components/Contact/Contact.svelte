@@ -20,6 +20,12 @@ const send = () => {
 </script>
 
 <style>
+/* iPhone Portrait */
+@media (max-width: 414px) {
+    .contact--container {
+        display: unset !important;
+    }
+}
 .contact--container {
     display: flex;
     align-items: center;

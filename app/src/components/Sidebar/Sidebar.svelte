@@ -2,7 +2,8 @@
 import {
 	GithubIcon,
 	LinkedinIcon,
-	MailIcon
+	MailIcon,
+    AlignRightIcon
 } from 'svelte-feather-icons';
 
 import SidebarLink from './SidebarLink.svelte';
@@ -35,6 +36,38 @@ const iconLinks = [
 </script>
 
 <style>
+@media (max-width: 1024px) {
+    .sidebar {
+        flex-direction: row !important;
+        padding: var(--space--extra-large) !important;
+    }
+    .sidebar--links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sidebar--brand {
+        margin-bottom: unset !important;
+    }
+    .sidebar--icons--container {
+        display: none;
+    }
+    .sidebar--brand-subtitle {
+        display: none;
+    }
+}
+@media (max-width: 414px) {
+    .sidebar--brand-name {
+        display: none !important;
+    }
+    .sidebar--brand-shortname {
+        display: unset !important;
+    }
+    .sidebar--links {
+        display: none;
+    }
+}
 .sidebar {
 	padding: var(--space--gutter);
 	width: 100%;
@@ -50,8 +83,11 @@ const iconLinks = [
 	margin-bottom: var(--space--gutter--large);
 	width: 100%;
 }
-.sidebar--brand-name {
+.sidebar--brand-name, .sidebar--brand-shortname {
 	margin: var(--space) 0;
+}
+.sidebar--brand-shortname {
+    display: none;
 }
 .sidebar--brand-subtitle {
 	margin: 0px;
@@ -76,6 +112,9 @@ const iconLinks = [
 			Preston<br/>
 			Wang-Stosur-Bassett
 		</h2>
+        <h2 class="sidebar--brand-shortname">
+            Preston
+        </h2>
 		<p class="sidebar--brand-subtitle">
 			Software Engineer<br/>
             & Experience Architect

@@ -1,8 +1,8 @@
 <script>
-export let type;
-export let placeholder;
-export let label;
-export let value;
+export let type; // Required
+export let placeholder = '';
+export let label = false; 
+export let value = '';
 </script>
 
 <style>
@@ -28,7 +28,9 @@ export let value;
 </style>
 
 <div class="text-box--container">
-    <h5 class="text-box--label">{label}</h5>
+    {#if label != false}
+        <h5 class="text-box--label">{label}</h5>
+    {/if}
     {#if type == 'textarea'}
         <textarea bind:value class="text-box--input text-box--input--textarea" placeholder="{placeholder}"></textarea>
     {:else if type == 'email'}
