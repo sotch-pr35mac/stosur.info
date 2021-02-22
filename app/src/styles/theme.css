@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Work+Sans:500&display=swap');
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Theme Colors */
+        --color--black: #FFFFFF;
+        --color--white: #000000;
+        --color--grey-1: #080707;
+        --color--grey-2: #151515;
+        --color--grey-3: #989898;
+
+        /* Shadows */
+   		--shadow: 0px 0px 10px rgba(255, 255, 255, 0.40);
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Theme Colors */
+        --color--black: #000000;
+        --color--white: #FFFFFF;
+        --color--grey-1: #F7F8F8;
+        --color--grey-2: #EAEAEA;
+        --color--grey-3: #676767;
+
+        /* Shadows */
+   		--shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+    }
+}
+
+:root {
+    /* Dark / Light Mode */
+    color-scheme: light dark; 
+
+	/* Theme Colors */
+	--color--primary-start: #47C3CC;
+	--color--primary-end: #567ABC;
+	--color--primary: linear-gradient(to right, var(--color--primary-start), var(--color--primary-end));
+
+	/* Text Colors */
+	--text-color--dark: var(--color--black);
+	--text-color--light: var(--color--grey-3);
+
+	/* Text Fonts */
+	--font--text: 'Roboto', sans-serif;
+	--font--title: 'Work Sans', sans-serif;
+	--font-weight--text: 400;
+	--font-weight--title: 500;
+
+	/* Borders */
+	--border-radius: 10px;
+	--border-radius--small: 2px;
+
+	/* Transitions & Animations */
+	--transition-duration: 0.5s;
+
+	/* Proximity */
+	--space--gutter--large: 60px;
+	--space--gutter--small: 30px;
+	--space--gutter: var(--space--gutter--large) var(--space--gutter--small);
+	--space: 5px;
+	--space--small: calc(var(--space) / 2);
+	--space--medium: var(--space);
+	--space--large: calc(var(--space) * 2);
+	--space--extra-large: calc(var(--space) * 4);
+}
+
+body {
+	margin: 0;
+	font-family: var(--font--text);
+	font-weight: var(--font-weight--text);
+	color: var(--color--grey-3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font--title);
+	font-weight: var(--font-weight--title);
+	color: var(--color--black);
+}
+
+p {
+	letter-spacing: 0.01em;
+}
