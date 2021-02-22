@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Preston Wang-Stosur-Bassett</title>
+    <meta name="description" content="A little about the life and times of Preston Wang-Stosur-Bassett." />
+    <meta name="keywords" content="code, preston, wang, stosur, bassett, wang-stosur-bassett, javascript, chinese, syng, programming" />
+    <meta name="author" content="Preston Wang-Stosur-Bassett" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300" rel="stylesheet">
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/image-hover.css" />
+		<script src="js/modernizr.custom.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page-container">
+  			<!-- the header that will be animated by adding the respective state class to it -->
+  			<header id="ha-header" class="ha-header ha-header-large">
+  				<div class="ha-header-perspective">
+  					<div class="ha-header-front">
+  						<h2><span>Preston<br>Wang-Stosur-Bassett</span></h2>
+  						<nav class="cl-effect-1">
+  							<a href="#about">About</a>
+  							<a href="#resume">Resume</a>
+  							<a href="#portfolio">Portfolio</a>
+  							<a href="#contact">Contact</a>
+                <!-- <a href="http://stosur.info/zh/index.html">[中文]</a> -->
+  						</nav>
+  					</div>
+  				</div>
+  			</header>
+  			<!-- the sections with triggers -->
+  			<section id="about">
+  				<about-section></about-section>
+  			</section>
+  			<section id="resume" class="ha-waypoint" data-animate-down="ha-header-shrink" data-animate-up="ha-header-large">
+          <resume-section></resume-section>
+  			</section>
+  			<section id="portfolio">
+          <portfolio-section></portfolio-section>
+  			</section>
+  			<section id="contact">
+          <contact-section></contact-section>
+          <div id="end-contact" class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-shrink">
+  			</section>
+        <footer>
+          <center>
+            <a class="footer-text">from Chicago with Love</a>
+            <br>
+            <a class="footer-text">Copyright &copy; 2017 Preston Wang-Stosur-Bassett</a>
+          </center>
+        </footer>
+  		</div><!-- /container -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="end-page" class="ha-waypoint" data-animate-down="ha-header-fullscreen" data-animate-up="ha-header-small"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/waypoints.min.js"></script>
+		<script>
+			var $head = $( '#ha-header' );
+			$( '.ha-waypoint' ).each( function(i) {
+				var $el = $( this ),
+					animClassDown = $el.data( 'animateDown' ),
+					animClassUp = $el.data( 'animateUp' );
+
+				$el.waypoint( function( direction ) {
+					if( direction === 'down' && animClassDown ) {
+						$head.attr('class', 'ha-header ' + animClassDown);
+					}
+					else if( direction === 'up' && animClassUp ){
+						$head.attr('class', 'ha-header ' + animClassUp);
+					}
+				}, { offset: '100%' } );
+			} );
+		</script>
+  </body>
+</html>
